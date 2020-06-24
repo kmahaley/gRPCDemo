@@ -1,0 +1,2 @@
+obj\x64\Release\netcoreapp3.1/Book.cs \
+obj\x64\Release\netcoreapp3.1/BookGrpc.cs: ../gRPCService/Protos/book.proto

@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package example;
+
+// [START Java]
+option java_package = "org.example.NMVnext";
+option java_outer_classname = "Book";
+// [END Java]
+
+// [START C#]
+option csharp_namespace = "Org.Example.NMVnext.Sevices";
+// [END C#]
+
+
+// The java service definition. Will behave as NM calling API
+service NMAPIBookService{
+    rpc AddBook(Book) returns (Book);
+    rpc GetBook(IntegerMessageType) returns (Book);
+    rpc GetAllBooks(VoidMessageType) returns (BookPacket);
+    rpc PutBook(PutMessageType) returns (Book);
+    rpc DeleteBook(IntegerMessageType) returns (VoidMessageType);
+}
+
+// The dotnet core service definition. Will behave as C#/Cosmos internal teams calling API
+service PNAPIBookService{
+    rpc PNAddBook(Book) returns (Book);
+    rpc PNGetBook(IntegerMessageType) returns (Book);
+    rpc PNGetAllBooks(VoidMessageType) returns (BookPacket);
+    rpc PNPutBook(PutMessageType) returns (Book);
+    rpc PNDeleteBook(IntegerMessageType) returns (VoidMessageType);
+}
+
+//request and response object
+message Book {
+
+    int32 id = 1;  // book id
+    string name = 2;
+    string author = 3;
+    int32 pages = 4;
+    float cost = 5;
+}
+
+message BookPacket {
+
+    repeated Book items = 1;
+}
+
+message IntegerMessageType {
+    int32 id = 1;
+}
+message PutMessageType {
+    int32 id = 1;
+    Book book = 2;
+}
+
+message VoidMessageType {}

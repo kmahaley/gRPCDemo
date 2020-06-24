@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "NMVnextGRPCService": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:10400",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

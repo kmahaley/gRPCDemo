@@ -1,0 +1,2 @@
+obj\Debug\netcoreapp3.1/Book.cs \
+obj\Debug\netcoreapp3.1/BookGrpc.cs: ../NMVnextGRPCService/Protos/book.proto
